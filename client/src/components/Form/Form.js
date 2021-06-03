@@ -26,22 +26,22 @@ const Form = ({ currentId, setCurrentId }) => {
     e.preventDefault();
 
     if (currentId === 0) {
-      dispatch(createPost({...postData, name: user.result.name}));
+      dispatch(createPost({ ...postData, name: user?.result?.name }));
       clear();
     } else {
-      dispatch(updatePost(currentId, {...postData, name: user.result.name}));
+      dispatch(updatePost(currentId, { ...postData, name: user?.result?.name }));
       clear();
     }
   };
 
-  if(!user?.result?.name) {
-    return(
+  if (!user?.result?.name) {
+    return (
       <Paper className={classes.paper}>
         <Typography variant="h6" align="center">
           Please sign in to create or edit a Post and like!
         </Typography>
       </Paper>
-    )
+    );
   }
 
   return (
